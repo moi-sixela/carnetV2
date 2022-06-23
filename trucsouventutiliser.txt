@@ -1,0 +1,14 @@
+//return
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+    a {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        color: white;
+    }
+</style>
+
+<a href="javascript:history.back()"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
+
