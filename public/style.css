@@ -1,5 +1,6 @@
 body {
     background-color: rgb(57, 57, 57);
+    margin: 0;
 
 }
 
@@ -83,22 +84,33 @@ b {
     color: white;
     padding: 14px 20px;
     display: block;
-    cursor: pointer;
     position: relative;
-    border: 1px solid rgb(27, 26, 26);
     font-family: Verdana,sans-serif;
+    left: 20px;
 
 }
 
+.element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-weight: 100;
+    color: rgb(182, 179, 179);
+    font-size: 10px;
+    font-family: Verdana,sans-serif;
+    
+}
 
 .navbar {
     overflow: hidden;
     background-color: #333;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
-    left: 0px;
+    left: 0;
     text-align: center;
+   
 
 }
 

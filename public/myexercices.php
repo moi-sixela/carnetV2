@@ -1,7 +1,5 @@
 <?php require("connexion_bdd.php");
-$listExercices = $bdd->query("SELECT `name_exercices` FROM `my_exercices`;");
-$listGroupmuscu = $bdd->query("SELECT `group_muscu` FROM `my_exercices`;");
-$listId = $bdd->query("SELECT `id_exercices` FROM `my_exercices`;");
+$listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");
 ?>
 
 
@@ -21,13 +19,16 @@ $listId = $bdd->query("SELECT `id_exercices` FROM `my_exercices`;");
 <body>
 
     <table>
-
-        <?php 
-            while ($my_exercices = $listGroupmuscu->fetch()) { ?>
-            <b type=exo class="button" href="#">
+        <?php while ($my_exercices = $listExercices->fetch()) { ?>
+            <b>
                 <?= $my_exercices['name_exercices'] ?>
+                <div class="element">
+                    <?= $my_exercices['group_muscu'] ?>
+                </div>
             </b>
         <?php } ?>
+
+
 
     </table>
 
