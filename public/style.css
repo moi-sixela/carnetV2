@@ -15,7 +15,7 @@ button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     
@@ -78,7 +78,7 @@ input[type=date], select {
     
 }
 
-b {
+li {
     width: auto;
     background-color: rgb(57, 57, 57);
     color: white;
@@ -87,9 +87,18 @@ b {
     position: relative;
     font-family: Verdana,sans-serif;
     left: 20px;
+    top: 20px;
 
 }
 
+u{
+    font-size: large;
+    color: white;
+    padding: 14px 20px;
+    position: relative;
+    left:10px;
+    font-family: Verdana,sans-serif;
+}
 .element {
     display: flex;
     flex-direction: row;
@@ -103,10 +112,8 @@ b {
 }
 
 .navbar {
-    overflow: hidden;
     background-color: #333;
-    position: sticky;
-    bottom: 0;
+    top: 0;
     width: 100%;
     left: 0;
     text-align: center;
@@ -130,6 +137,9 @@ b {
     color: black;
 }
 
+div [type="listbutton"] {
+    top:100px;
+}
 .tabata {
     width: 50%;
     background-color: rgb(31, 152, 251);
@@ -142,6 +152,7 @@ b {
     margin-right: auto;
     border: none;
     border-radius: 30px;
+    top: 30px;
 
 }
 
@@ -161,6 +172,7 @@ b {
     margin-right: auto;
     border: none;
     border-radius: 30px;
+    top: 30px;
 
 }
 
@@ -180,6 +192,8 @@ b {
     margin-right: auto;
     border: none;
     border-radius: 30px;
+    top: 30px;
+
 
 }
 
@@ -200,6 +214,8 @@ b {
     margin-right: auto;
     border: none;
     border-radius: 30px;
+    top: 30px;
+
 
 }
 
@@ -219,6 +235,8 @@ b {
     margin-right: auto;
     border: none;
     border-radius: 30px;
+    top: 30px;
+
 
 }
 

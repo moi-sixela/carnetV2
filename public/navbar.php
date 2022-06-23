@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar fixed-bottom">
     <a href="#Profil">Profil</a>
     <a href="#Historique">Historique</a>
     <a href="#Entrainement">Entrainement</a>

@@ -17,22 +17,24 @@ $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu
 </head>
 
 <body>
+    <?php require("navbar.php") ?>
+
 
     <table>
-        <?php while ($my_exercices = $listExercices->fetch()) { ?>
-            <b>
+        <?php
+        while ($my_exercices = $listExercices->fetch()) { ?>
+            <li>
                 <?= $my_exercices['name_exercices'] ?>
                 <div class="element">
                     <?= $my_exercices['group_muscu'] ?>
                 </div>
-            </b>
+            </li>
         <?php } ?>
 
 
 
     </table>
 
-    <?php require("navbar.php") ?>
 
     <button onclick="location.href='addmyexercices.php'" class="button">+</button>
 
