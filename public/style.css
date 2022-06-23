@@ -19,6 +19,14 @@ button {
     bottom: 0;
     
 }
+
+a[type=button], select{
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        color: white;
+    
+}
 input[type=text], select {
     background-color: rgb(29, 25, 25);
     color: white;
@@ -69,12 +77,19 @@ input[type=date], select {
     
 }
 
-    b {
-    position: fixed;
-    left: 10px;
-    top: 10px;
+b {
+    width: auto;
+    background-color: rgb(57, 57, 57);
     color: white;
+    padding: 14px 20px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgb(27, 26, 26);
+    font-family: Verdana,sans-serif;
+
 }
+
 
 .navbar {
     overflow: hidden;
