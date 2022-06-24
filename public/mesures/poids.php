@@ -51,7 +51,7 @@ if (isset($_POST['date'], $_POST['poids'])) {
         <table>
             <?php
             while ($my_poids = $listPoids->fetch()) { ?>
-                <a>
+                <a type="text">
                     <?= $my_poids['date'] ?><span style="padding-left:70px;"></span><?= $my_poids['poids'] ?> kg
 
                 </a>

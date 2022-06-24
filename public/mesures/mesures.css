@@ -98,8 +98,7 @@ a {
     color: white;
     padding: 14px 20px;
     display: block;
-    position: relative;
     font-family: Verdana,sans-serif;
-    top: 20px;
+    top: 0;
 
 }
