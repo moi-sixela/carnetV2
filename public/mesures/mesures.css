@@ -1,0 +1,93 @@
+body {
+    background-color: rgb(57, 57, 57);
+    margin: 0;
+
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    
+  }
+  
+
+
+  .form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #ddd;
+    font-family: Verdana, sans-serif;
+  }
+  .form-inline input[type=date] {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #ddd;
+    font-family: Verdana, sans-serif;
+    color:white;
+  }
+  
+
+  .form-inline button {
+    padding: 10px 20px;
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+    color: white;
+    font-family: Verdana, sans-serif;
+  }
+  
+  .form-inline button:hover {
+    background-color: royalblue;
+  }
+  
+  @media (max-width: 800px) {
+    .form-inline input {
+      margin: 10px 0;
+    }
+  
+    .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+.element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-weight: 100;
+    color: rgb(182, 179, 179);
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+
+}
+
+.navbar {
+    background-color: #333;
+    top: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+
+
+}
+
+.navbar a {
+    font-family: Verdana, sans-serif;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background: #f1f1f1;
+    color: black;
+}
