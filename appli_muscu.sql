@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 24 juin 2022 à 16:15
+-- Généré le : ven. 24 juin 2022 à 22:21
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `appli_muscu`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `entrainement`
+--
+
+DROP TABLE IF EXISTS `entrainement`;
+CREATE TABLE IF NOT EXISTS `entrainement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_entrainement` text NOT NULL,
+  `description_entrainement` text NOT NULL,
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `entrainement`
+--
+
+INSERT INTO `entrainement` (`id`, `name_entrainement`, `description_entrainement`, `date`) VALUES
+(1, 'Bras', '', '2022-06-26'),
+(2, 'Jambes', '', '2200-07-15');
 
 -- --------------------------------------------------------
 
@@ -71,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `my_poids` (
   `date` date NOT NULL,
   `poids` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `my_poids`
@@ -83,7 +106,8 @@ INSERT INTO `my_poids` (`id`, `date`, `poids`) VALUES
 (7, '2022-06-27', 65),
 (8, '2022-05-18', 36),
 (9, '2003-11-15', 4),
-(10, '2022-08-06', 78);
+(10, '2022-08-06', 78),
+(11, '2082-06-18', 110);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
