@@ -4,7 +4,6 @@ require("connexion_bdd.php");
 $listPoids = $bdd->query("SELECT * FROM `my_poids` ORDER BY `date`,`poids`;");
 
 
-
 if (isset($_POST['date'], $_POST['poids'])) {
     if (!empty($_POST['date']) && !empty($_POST['poids'])) {
         $date = htmlspecialchars($_POST['date']);
