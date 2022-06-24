@@ -12,10 +12,10 @@
 <body>
     <?php require("navbar.php") ?>
     <div type="listbutton">
-        <button class="amrap" type="button" href="chronometre/amrap.php">AMRAP</button>
+        <button class="amrap" type="button" onclick="location.href='chronometre/amrap.php'">AMRAP</button>
         <button class="emom" type="button">EMOM</button>
-        <button class="tabata" type="button">TABATA</button>
-        <button class="chrono" type="button" onclick="location.href='chronometre/chrono.php'">CHRONO</button>
+        <button class="tabata" type="button" "onclick=" location.href='chronometre/tabata.html'""">TABATA</button>
+        <button class=" chrono" type="button" onclick="location.href='chronometre/chrono.php'">CHRONO</button>
         <button class="timer" type="button" onclick="location.href='chronometre/timer.php'">TIMER</button>
     </div>
 
