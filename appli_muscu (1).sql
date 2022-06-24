@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 24 juin 2022 à 08:42
+-- Généré le : ven. 24 juin 2022 à 12:23
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `my_exercices` (
   `group_muscu` varchar(30) NOT NULL,
   `type` varchar(30) NOT NULL,
   PRIMARY KEY (`id_exercices`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `my_exercices`
@@ -56,7 +56,22 @@ INSERT INTO `my_exercices` (`id_exercices`, `name_exercices`, `description_exerc
 (13, 'Tirage horizontale', '', 'Dos', 'Charge et répétition'),
 (14, 'Tirage verticale pronation', '', 'Dos', 'Charge et répétition'),
 (15, 'Extension triceps poulie', '', 'Triceps', 'Charge et répétition'),
-(16, 'Dips ', '', 'Triceps', 'Charge et répétition');
+(16, 'Dips ', '', 'Triceps', 'Charge et répétition'),
+(17, 'Leg curl allongé', '', 'Jambes', 'Charge et répétition');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `my_poids`
+--
+
+DROP TABLE IF EXISTS `my_poids`;
+CREATE TABLE IF NOT EXISTS `my_poids` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `poids` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,3 +1,29 @@
+<?php
+
+require("connexion_bdd.php");
+$listPoids = $bdd->query("SELECT * FROM `my_poids` ORDER BY `date`,`poids`;");
+
+
+
+if (isset($_POST['date'], $_POST['poids'])) {
+    if (!empty($_POST['date']) && !empty($_POST['poids'])) {
+        $date = htmlspecialchars($_POST['date']);
+        $poids = htmlspecialchars($_POST['poids']);
+        $req = $bdd->prepare('INSERT INTO `my_poids`(`date`,`poids`) VALUES (?,?)');
+        $req->execute(array(
+            $date,
+            $poids
+
+
+
+        ));
+        header("Refresh:0");
+    } else {
+        echo "Veuillez remplir tous les champs";
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +37,32 @@
 
 <body>
     <?php require("navbar.php") ?>
-    <form class="form-inline" action="/action_page.php">
+    <form action="poids.php" method="post" class="form-inline">
         <input type="date" id="date" placeholder="Date" name="date">
         <input type="int" id="int" placeholder="Poids (en kg)" name="poids">
         <button type="submit">Submit</button>
     </form>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    <table>
+        <table>
+            <?php
+            while ($my_poids = $listPoids->fetch()) { ?>
+                <a>
+                    <?= $my_poids['date'] ?><span style="padding-left:70px;"></span><?= $my_poids['poids'] ?> kg
+
+                </a>
+            <?php } ?>
+
+
+
+        </table>
+
+
+    </table>
 </body>
 
 </html>
