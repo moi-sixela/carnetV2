@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 24 juin 2022 à 12:23
+-- Généré le : ven. 24 juin 2022 à 16:15
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -71,7 +71,19 @@ CREATE TABLE IF NOT EXISTS `my_poids` (
   `date` date NOT NULL,
   `poids` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `my_poids`
+--
+
+INSERT INTO `my_poids` (`id`, `date`, `poids`) VALUES
+(1, '2022-06-24', 75),
+(6, '2022-02-10', 78),
+(7, '2022-06-27', 65),
+(8, '2022-05-18', 36),
+(9, '2003-11-15', 4),
+(10, '2022-08-06', 78);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
