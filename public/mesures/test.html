@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <p> test</p>
+    <canvas id="graph1"></canvas>
+</body>
+
+</html>
+<script >
+    var ctx = document.getElementById('graph1').getContext('2d');
+    var data = {
+
+    };
+
+    var options;
+
+    var config = {
+        type: 'line',
+        data: data,
+        
+    };
+    var graph1 = new Chart(ctx, config);
+
+</script>

@@ -37,7 +37,7 @@ $listEntrainement = $bdd->query("SELECT * FROM `entrainement`");
     <?php require("navbar.php") ?>
 
     <?php while ($entrainement = $listEntrainement->fetch()) { ?>
-        <li class="button" href="/carnetV2/public/">
+        <li class="button" onclick="location.href='exercices.php?id=<?= $entrainement['id'] ?>'">
             <?= $entrainement['name_entrainement'] ?> - <?= $entrainement['date'] ?>
             <div class="element">
                 <?= $entrainement['description_entrainement'] ?>

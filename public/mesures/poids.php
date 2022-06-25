@@ -41,6 +41,7 @@ if (isset($_POST['date'], $_POST['poids'])) {
         <input type="int" id="int" placeholder="Poids (en kg)" name="poids">
         <button type="submit">Submit</button>
     </form>
+  
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
