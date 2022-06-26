@@ -60,27 +60,33 @@ if (isset($_POST['date'], $_POST['poids'])) {
                 type: "GET",
                 success: function(data) {
                     console.log(data)
-                    var date = [];
+
+
+                    var datePoids = [];
                     var poids = [];
 
-                    for (var i in data) {
+                    var val = JSON.parse(data);
 
-                        date.push("d" + data[i].date)
-                        poids.push(data[i].poids)
+                    for (var i in val) {
+
+                        poids.push(val[i].poids)
+                        datePoids.push(val[i].date)
+
                     }
+
                     var chartdata = {
-                        labels: date,
+                        labels: datePoids,
                         datasets: [{
                             label: "poids",
                             fill: false,
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
+                                'rgb(65,105,225)',
                             ],
+                            borderColor: ['rgb(65,105,225)'],
                             data: poids
                         }]
                     }
-                    const ctx = document.getElementById('mycanvas').getContext('2d');
-
+                    var ctx = $("#mycanvas");
                     var mycanvas = new Chart(ctx, {
                         type: 'line',
                         data: chartdata

@@ -1,11 +1,9 @@
 <?php
 require("connexion_bdd.php");
-$query = sprintf("SELECT `poids`,`date` FROM `my_poids`");
-$result = $bdd->query($query);
-
+$query = sprintf("SELECT `poids`,`date` FROM `my_poids` ORDER BY `date`");
+$results = $bdd->query($query);
 $data = array();
-
-foreach ($result as $row) {
-
-    print(json_encode($row));
+while ($result = $results->fetch(PDO::FETCH_ASSOC)) {
+    array_push($data, $result);
 }
+print(json_encode($data));
