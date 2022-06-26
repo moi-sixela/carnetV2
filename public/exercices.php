@@ -12,6 +12,8 @@
 <body>
     <?php require("navbar.php") ?>
 
+
+    <button onclick="location.href='addexercices.php'" class="button">+</button>
 </body>
 
 </html>
