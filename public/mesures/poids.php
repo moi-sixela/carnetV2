@@ -37,12 +37,13 @@ if (isset($_POST['date'], $_POST['poids'])) {
     <script src="http://localhost/carnetV2/node_modules/chart.js"></script>
     <style type="text/css">
         canvas {
+
             width: 1000px;
             height: 100%;
             margin: auto;
             padding: 0;
             border: none;
-            background-color: rgb(20, 20, 20);
+            background-color: white;
         }
     </style>
 </head>
