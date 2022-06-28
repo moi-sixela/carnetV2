@@ -1,5 +1,6 @@
 <?php
-
+require("connexion_bdd.php");
+$listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +14,70 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style type="text/css">
-    a {
-        position: fixed;
-        left: 10px;
-        top: 10px;
-        color: white;
-    }
-</style>
+        a {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            color: white;
+        }
+
+        li {
+            width: auto;
+            background-color: rgb(57, 57, 57);
+            color: white;
+            padding: 14px 20px;
+            display: block;
+            font-family: Verdana, sans-serif;
+            left: 20px;
+            top: 50px;
+
+
+        }
+
+        input[type=submit] {
+            width: 90%;
+            background-color: rgb(31, 152, 251);
+            color: white;
+            padding: 14px 20px;
+            display: block;
+            position: sticky;
+            bottom: 0;
+            margin: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            border: none;
+            border-radius: 30px;
+
+
+        }
+
+        input[type=submit]:hover {
+            background-color: rgba(31, 152, 251, 0.742);
+
+        }
+    </style>
 </head>
 
 <body>
-<a href="javascript:history.back()"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
+    <a href="javascript:history.back()"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
+    <table>
+        <form action="checkbox.php" method="post">
+            <?php
+            while ($my_exercices = $listExercices->fetch()) { ?>
+
+                <li>
+                    <input type="checkbox" value="<?= $my_exercices['name_exercices'] ?>">
+                    <?= $my_exercices['name_exercices'] ?>
+                    <div class="element">
+                        <?= $my_exercices['group_muscu'] ?>
+                    </div>
+                    </input>
+                </li>
+            <?php } ?>
+            <input type="submit" value="Ajouter"></input>
+
+        </form>
+    </table>
 </body>
 
 </html>
