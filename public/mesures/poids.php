@@ -1,7 +1,7 @@
 <?php
 
 require("connexion_bdd.php");
-$listPoids = $bdd->query("SELECT * FROM `my_poids` ORDER BY `date`,`poids`;");
+$listPoids = $bdd->query("SELECT * FROM `my_poids` ORDER BY `date` DESC;");
 
 
 if (isset($_POST['date'], $_POST['poids'])) {
