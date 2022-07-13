@@ -1,6 +1,13 @@
 <?php
 require("connexion_bdd.php");
 $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");
+
+if (is_array($_POST["checkbox"]) || is_object($_POST["checkbox"])) {
+    foreach ($_POST["checkbox"] as $checkoptions) {
+        echo nl2br("$checkoptions \n");
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -61,12 +68,12 @@ $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu
 <body>
     <a href="javascript:history.back()"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
     <table>
-        <form action="checkbox.php" method="post">
+        <form action="" method="post">
             <?php
             while ($my_exercices = $listExercices->fetch()) { ?>
 
                 <li>
-                    <input type="checkbox" value="<?= $my_exercices['name_exercices'] ?>">
+                    <input type="checkbox" name="checkbox[]" value="<?= $my_exercices['name_exercices'] ?>">
                     <?= $my_exercices['name_exercices'] ?>
                     <div class="element">
                         <?= $my_exercices['group_muscu'] ?>
