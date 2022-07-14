@@ -17,3 +17,29 @@
 
 
 action=".php"
+
+
+
+
+//ajouter dans une table
+
+if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POST['description_exercices'])) {
+    if (!empty($_POST['name_exercices']) && !empty($_POST['group_muscu']) && !empty($_POST['type'])) {
+        $nameExercices = htmlspecialchars($_POST['name_exercices']);
+        $description_exercices = htmlspecialchars($_POST['description_exercices']);
+        $groupMuscu = htmlspecialchars($_POST['group_muscu']);
+        $type = htmlspecialchars($_POST['type']);
+        $req = $bdd->prepare('INSERT INTO `my_exercices`(`name_exercices`,`description_exercices`,`group_muscu`,`type`) VALUES (?,?,?,?)');
+        $req->execute(array(
+            $nameExercices,
+            $description_exercices,
+            $groupMuscu,
+            $type
+
+
+        ));
+        header("Location: http://localhost/carnetV2/public");
+    } else {
+        echo "Veuillez remplir tous les champs";
+    }
+}
