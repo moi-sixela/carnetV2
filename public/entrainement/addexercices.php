@@ -1,7 +1,8 @@
 <?php
 require("connexion_bdd.php");
 $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");
-$listEntrainement = $bdd->query("SELECT * FROM `entrainement`");
+
+$id_entrainement = $_GET["id"];
 
 if (isset($_POST["checkbox"])) {
 
@@ -10,14 +11,15 @@ if (isset($_POST["checkbox"])) {
 
             if (!empty($checkoptions)) {
                 $nameCheckbox = htmlspecialchars($checkoptions);
-                $req = $bdd->prepare('INSERT INTO `exercices_entrainement`(`name_exercices`) VALUES (?)');
+                $req = $bdd->prepare('INSERT INTO `exercices_entrainement`(`id_entrainement`,`name_exercices`) VALUES (?,?)');
                 $req->execute(array(
+                    $id_entrainement,
                     $nameCheckbox
 
 
 
                 ));
-                header("Location: http://localhost/carnetV2/public");
+                header("Location: http://localhost/carnetV2/public/exercices.php?id=$_GET[id]");
             } else {
                 echo "Veuillez remplir tous les champs";
             }
