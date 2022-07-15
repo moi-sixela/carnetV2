@@ -31,7 +31,8 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
 <head>
     <meta charset="UTF-8" />
     <title>Document</title>
-    <link rel="stylesheet" href="http://localhost/carnetV2/public/mesures/mesures.css">
+    <link rel="stylesheet" href="reps.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -48,11 +49,10 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
     <table>
         <?php
         while ($charge_repetition = $listPoidsCharge->fetch()) { ?>
-            <a type="text">
+            <li type="text">
                 <?= $charge_repetition['repetitions'] ?>x<?= $charge_repetition['charges'] ?> kg
-
-
-            </a>
+                <a class="right" href="deletechargerepetition.php?idexercice=<?= $_GET['id'] ?>&id=<?= $charge_repetition['id'] ?>"><span class="material-icons" style="font-size:auto; color:#ff0000">cancel</span></a>
+            </li>
         <?php } ?>
 
 
