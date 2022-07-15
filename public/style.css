@@ -57,7 +57,7 @@ input[type=date], select {
     border-radius: 30px;
     
 }
-    input[type=submit] {
+input[type=submit] {
     width: 90%;
     background-color: rgb(31, 152, 251);
     color: white;

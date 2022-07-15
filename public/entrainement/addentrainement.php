@@ -14,7 +14,7 @@ if (isset($_POST['nameentrainement'], $_POST['descriptionentrainement'], $_POST[
             $description,
             $date
         ));
-        header("Location: http://localhost/carnetV2/public/entrainement.php");
+        header("Location: http://localhost/carnetV2/public/entrainement/entrainement.php");
     } else {
         echo "Veuillez remplir tous les champs";
     }

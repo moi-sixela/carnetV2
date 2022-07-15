@@ -43,8 +43,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     <?php while ($exercices = $listExercices->fetch()) { ?>
         <li class="button" onclick="location.href='reps.php?id=<?= $exercices['id'] ?>'">
             <?= $exercices['name_exercices'] ?>
-            <span type="backspace" class="material-icons">backspace</span>
+            <a class="right" href="deleteentrainement.php?idexercice=<?= $_GET['id'] ?>&id=<?= $exercices['id'] ?>"><span class="material-icons" style="font-size:auto; color:#ff0000">cancel</span></a>
+
         </li>
+
     <?php } ?>
 
 

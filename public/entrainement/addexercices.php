@@ -19,7 +19,7 @@ if (isset($_POST["checkbox"])) {
 
 
                 ));
-                header("Location: http://localhost/carnetV2/public/exercices.php?id=$_GET[id]");
+                header("Location: http://localhost/carnetV2/public/entrainement/exercices.php?id=$_GET[id]");
             } else {
                 echo "Veuillez remplir tous les champs";
             }
