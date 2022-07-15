@@ -54,6 +54,11 @@
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
+                    <label> Your Username<span class="req">*</span> </label>
+                    <input type="username" class="form-control" id="username" required data-validation-required-message="Please enter your email address." autocomplete="off">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                  <div class="form-group">
                     <label> Password<span class="req">*</span> </label>
                     <input type="password" class="form-control" id="password" required data-validation-required-message="Please enter your password" autocomplete="off">
                     <p class="help-block text-danger"></p>
@@ -69,8 +74,8 @@
                 <h2 class="text-uppercase text-center"> Log in</h2>
                 <form id="login">
                   <div class="form-group">
-                    <label> Your Email<span class="req">*</span> </label>
-                    <input type="emails" class="form-control" id="emails" required data-validation-required-message="Please enter your email address." autocomplete="off">
+                    <label> Your Username<span class="req">*</span> </label>
+                    <input type="username" class="form-control" id="username" required data-validation-required-message="Please enter your email address." autocomplete="off">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="form-group">
@@ -99,7 +104,7 @@
   <script src="./script.js"></script>
 
 
-<button onclick="location.href='profil.php'"> home </button>
+  <button onclick="location.href='profil.php'"> home </button>
 </body>
 
 </html>
