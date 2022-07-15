@@ -1,9 +1,10 @@
 <?php
 
 require("../connexion_bdd.php");
-$listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition`;");
 
 $idExercices = (int)$_GET['id'];
+$listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition` WHERE `id_exercices`= $idExercices;");
+
 if (isset($_POST['repetitions'], $_POST['charges'])) {
     if (!empty($_POST['repetitions']) && !empty($_POST['charges'])) {
         $repetitions = htmlspecialchars($_POST['repetitions']);
@@ -48,7 +49,7 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
         <?php
         while ($charge_repetition = $listPoidsCharge->fetch()) { ?>
             <a type="text">
-                <?= $charge_repetition['repetitions'] ?>x</span><?= $charge_repetition['charges'] ?> kg
+                <?= $charge_repetition['repetitions'] ?>x<?= $charge_repetition['charges'] ?> kg
 
 
             </a>

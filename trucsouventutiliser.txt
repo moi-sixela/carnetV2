@@ -43,3 +43,5 @@ if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POS
         echo "Veuillez remplir tous les champs";
     }
 }
+
+
