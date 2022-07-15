@@ -1,6 +1,6 @@
 <?php
 
-require("connexion_bdd.php");
+require("../connexion_bdd.php");
 
 $listEntrainement = $bdd->query("SELECT * FROM `entrainement`");
 ?>
@@ -34,7 +34,7 @@ $listEntrainement = $bdd->query("SELECT * FROM `entrainement`");
 
 <body>
 
-    <?php require("navbar.php") ?>
+    <?php require("../navbar.php") ?>
 
     <?php while ($entrainement = $listEntrainement->fetch()) { ?>
         <li class="button" onclick="location.href='exercices.php?id=<?= $entrainement['id'] ?>'">

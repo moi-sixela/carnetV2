@@ -1,6 +1,6 @@
 <?php
 
-require("connexion_bdd.php");
+require("../connexion_bdd.php");
 $listPoids = $bdd->query("SELECT * FROM `my_poids` ORDER BY `date` DESC;");
 
 
@@ -49,7 +49,7 @@ if (isset($_POST['date'], $_POST['poids'])) {
 </head>
 
 <body>
-    <?php require("navbar.php") ?>
+    <?php require("../navbar.php") ?>
     <div type="canvas">
         <canvas id="mycanvas"></canvas>
     </div>

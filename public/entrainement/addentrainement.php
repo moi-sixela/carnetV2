@@ -1,6 +1,6 @@
 <?php
 
-require("connexion_bdd.php");
+require("../connexion_bdd.php");
 
 
 if (isset($_POST['nameentrainement'], $_POST['descriptionentrainement'], $_POST['date'])) {

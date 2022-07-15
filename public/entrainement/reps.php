@@ -1,6 +1,6 @@
 <?php
 
-require("connexion_bdd.php");
+require("../connexion_bdd.php");
 $listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition`;");
 
 $idExercices = (int)$_GET['id'];
@@ -35,7 +35,7 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
 
 <body>
 </body>
-<?php require("navbar.php") ?>
+<?php require("../navbar.php") ?>
 
 
 <form action="reps.php?id=<?= $_GET['id'] ?>" method="post" class="form-inline">
