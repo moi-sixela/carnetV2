@@ -5,6 +5,7 @@ require("../connexion_bdd.php");
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $idExercices = (int)$_GET['id'];
     $listExercices = $bdd->query("SELECT * FROM `exercices_entrainement` WHERE `id_entrainement` = $idExercices;");
+    $listEntrainement = $bdd->query("SELECT * FROM `entrainement` WHERE `id` = $idExercices;");
 }
 if (isset($_POST['descriptiongenerale'])) {
     if (!empty($_POST['descriptiongenerale'])) {
@@ -78,20 +79,22 @@ if (isset($_POST['descriptiongenerale'])) {
 
 
     <?php while ($exercices = $listExercices->fetch()) { ?>
-        <li class="button" onclick="location.href='reps.php?id=<?= $exercices['id'] ?>'">
+        <li class="button" onclick="location.href='reps.php?id=<?= $exercices['id'] ?>&identrainement=<?= $_GET['id'] ?>'">
             <?= $exercices['name_exercices'] ?>
             <a class="right" href="deleteexercices.php?idexercice=<?= $_GET['id'] ?>&id=<?= $exercices['id'] ?>"><span class="material-icons" style="font-size:auto; color:#ff0000">cancel</span></a>
 
         </li>
 
     <?php } ?>
-    <form action="exercices.php?id=<?= $_GET['id'] ?>" method="post">
-        <div>
-            <textarea id="descriptiongenerale" name="descriptiongenerale" rows="5" cols="33" placeholder="Description de séance"></textarea>
-            <input type="submit" value="Envoyer" style="float:right" />
-        </div>
+    <?php while ($entrainement = $listEntrainement->fetch()) { ?>
+        <form action="exercices.php?id=<?= $_GET['id'] ?>" method="post">
+            <div>
+                <textarea id="descriptiongenerale" name="descriptiongenerale" rows="5" cols="33" placeholder="Description de séance"><?= $entrainement['descriptiongenerale'] ?></textarea>
+                <input type="submit" value="Envoyer" style="float:right" />
+            </div>
 
-    </form>
+        </form>
+    <?php } ?>
 
 
     <button onclick="location.href='addexercices.php?id=<?= $_GET['id'] ?>'" class="button">+</button>

@@ -3,15 +3,17 @@
 require("../connexion_bdd.php");
 
 $idExercices = (int)$_GET['id'];
+$idEntrainement = (int)$_GET['identrainement'];
 $listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition` WHERE `id_exercices`= $idExercices;");
 
 if (isset($_POST['repetitions'], $_POST['charges'])) {
     if (!empty($_POST['repetitions']) && !empty($_POST['charges'])) {
         $repetitions = htmlspecialchars($_POST['repetitions']);
         $charges = htmlspecialchars($_POST['charges']);
-        $req = $bdd->prepare('INSERT INTO `charge_repetition`(`id_exercices`,`charges`,`repetitions`) VALUES (?,?,?)');
+        $req = $bdd->prepare('INSERT INTO `charge_repetition`(`id_exercices`,`id_entrainement`,`charges`,`repetitions`) VALUES (?,?,?,?)');
         $req->execute(array(
             $idExercices,
+            $idEntrainement,
             $charges,
             $repetitions
 
@@ -40,7 +42,7 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
 <?php require("../navbar.php") ?>
 
 
-<form action="reps.php?id=<?= $_GET['id'] ?>" method="post" class="form-inline">
+<form action="reps.php?id=<?= $_GET['id'] ?>&identrainement=<?= $idEntrainement ?>" method="post" class="form-inline">
     <input type="int" id="int" placeholder="Nombre de répétitions" name="repetitions">
     <input type="int" id="int" placeholder="Poids (en kg)" name="charges">
     <button type="submit">Submit</button>
