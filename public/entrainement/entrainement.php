@@ -47,6 +47,8 @@ $listEntrainement = $bdd->query("SELECT * FROM `entrainement`");
         </li>
     <?php } ?>
 
+
+
     <button onclick="location.href='addentrainement.php'" class="button">+</button>
 
 </body>
