@@ -6,6 +6,21 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $idExercices = (int)$_GET['id'];
     $listExercices = $bdd->query("SELECT * FROM `exercices_entrainement` WHERE `id_entrainement` = $idExercices;");
 }
+if (isset($_POST['descriptiongenerale'])) {
+    if (!empty($_POST['descriptiongenerale'])) {
+        $id = $_GET["id"];
+        $descriptiongenerale = htmlspecialchars($_POST['descriptiongenerale']);
+        $req = $bdd->prepare('UPDATE `entrainement` SET `descriptiongenerale`=? WHERE `id`=?');
+        $req->execute(array(
+            $descriptiongenerale,
+            $id
+
+
+
+        ));
+        header("Location: http://localhost/carnetV2/public/entrainement/exercices.php?id=$_GET[id]");
+    }
+};
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +47,28 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             font-family: Verdana, sans-serif;
 
         }
+
+        form {
+            padding-top: 30px;
+            left: auto;
+        }
+
+        textarea {
+            background-color: rgb(29, 25, 25);
+            color: white;
+            width: 99.5%;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(31, 152, 251);
+            color: white;
+            width: auto;
+            height: auto;
+
+        }
     </style>
 </head>
 
@@ -48,6 +85,13 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         </li>
 
     <?php } ?>
+    <form action="exercices.php?id=<?= $_GET['id'] ?>" method="post">
+        <div>
+            <textarea id="descriptiongenerale" name="descriptiongenerale" rows="5" cols="33" placeholder="Description de séance"></textarea>
+            <input type="submit" value="Envoyer" style="float:right" />
+        </div>
+
+    </form>
 
 
     <button onclick="location.href='addexercices.php?id=<?= $_GET['id'] ?>'" class="button">+</button>
