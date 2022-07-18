@@ -1,15 +1,19 @@
 <?php
 
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
-$listPoids = $bdd->query("SELECT * FROM `my_poids` ORDER BY `date` DESC;");
+$listPoids = $bdd->query("SELECT * FROM `my_poids` WHERE `id_user` = $id_user ORDER BY `date` DESC;");
 
 
 if (isset($_POST['date'], $_POST['poids'])) {
     if (!empty($_POST['date']) && !empty($_POST['poids'])) {
         $date = htmlspecialchars($_POST['date']);
         $poids = htmlspecialchars($_POST['poids']);
-        $req = $bdd->prepare('INSERT INTO `my_poids`(`date`,`poids`) VALUES (?,?)');
+        $req = $bdd->prepare('INSERT INTO `my_poids`(`id_user`,`date`,`poids`) VALUES (?,?,?)');
         $req->execute(array(
+            $id_user,
             $date,
             $poids
 
