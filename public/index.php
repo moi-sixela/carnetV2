@@ -10,9 +10,9 @@ if (isset($_POST['usernames'], $_POST['passwords'])) {
   $user = $stmt->fetch();
 
   if ($user && password_verify($passwords, $user['password'])) {
-    echo "valid!";
+    header("Location:http://localhost/carnetV2/public/profil.php");
   } else {
-    echo "invalid";
+    echo "<script type='text/javascript'>alert('Username ou Mot de passe invalide');</script>";
   }
 }
 
@@ -125,7 +125,7 @@ if (isset($_POST['first_name'], $_POST['last_name'], $_POST['email'], $_POST['us
                   </div>
                   <div class="form-group">
                     <label> Password<span class="req">*</span> </label>
-                    <input type="passwords" class="form-control" name="passwords" id="passwords" required data-validation-required-message="Please enter your password" autocomplete="off">
+                    <input type="password" class="form-control" name="passwords" id="passwords" required data-validation-required-message="Please enter your password" autocomplete="off">
                     <p class="help-block text-danger"></p>
                   </div>
                   <div class="mrgn-30-top">
