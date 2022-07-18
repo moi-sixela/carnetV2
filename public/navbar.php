@@ -6,6 +6,6 @@
     <a href="http://localhost/carnetV2/public/myexercices.php">Exercices</a>
     <a href="http://localhost/carnetV2/public/mesures.php">Mesures</a>
     <a href="http://localhost/carnetV2/public/chronometre.php">Chronomètre</a>
-    <a class="user" href="#"><span class="material-icons">person</span></a>
-    <a class="disconnect" href="#"><span class="material-icons">block</span></a>
+    <a class="user" href="http://localhost/carnetV2/public/"><span class="material-icons">person</span></a>
+    <a class="disconnect" href="http://localhost/carnetV2/public/disconnect.php"><span class="material-icons">block</span></a>
 </div>

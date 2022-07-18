@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
 
 
@@ -9,8 +12,9 @@ if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POS
         $description_exercices = htmlspecialchars($_POST['description_exercices']);
         $groupMuscu = htmlspecialchars($_POST['group_muscu']);
         $type = htmlspecialchars($_POST['type']);
-        $req = $bdd->prepare('INSERT INTO `my_exercices`(`name_exercices`,`description_exercices`,`group_muscu`,`type`) VALUES (?,?,?,?)');
+        $req = $bdd->prepare('INSERT INTO `my_exercices`(`id_user`,`name_exercices`,`description_exercices`,`group_muscu`,`type`) VALUES (?,?,?,?)');
         $req->execute(array(
+            $id_user,
             $nameExercices,
             $description_exercices,
             $groupMuscu,

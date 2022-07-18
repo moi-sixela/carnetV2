@@ -1,11 +1,14 @@
 <?php
 
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $idExercices = (int)$_GET['id'];
-    $listExercices = $bdd->query("SELECT * FROM `exercices_entrainement` WHERE `id_entrainement` = $idExercices;");
-    $listEntrainement = $bdd->query("SELECT * FROM `entrainement` WHERE `id` = $idExercices;");
+    $listExercices = $bdd->query("SELECT * FROM `exercices_entrainement` WHERE `id_entrainement` = $idExercices AND `id_user` = $id_user ");
+    $listEntrainement = $bdd->query("SELECT * FROM `entrainement` WHERE `id` = $idExercices AND `id_user` = $id_user");
 }
 if (isset($_POST['descriptiongenerale'])) {
     if (!empty($_POST['descriptiongenerale'])) {

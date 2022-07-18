@@ -1,17 +1,21 @@
 <?php
 
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
 
 $idExercices = (int)$_GET['id'];
 $idEntrainement = (int)$_GET['identrainement'];
-$listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition` WHERE `id_exercices`= $idExercices;");
+$listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition` WHERE `id_exercices`= $idExercices AND `id_user` = $id_user");
 
 if (isset($_POST['repetitions'], $_POST['charges'])) {
     if (!empty($_POST['repetitions']) && !empty($_POST['charges'])) {
         $repetitions = htmlspecialchars($_POST['repetitions']);
         $charges = htmlspecialchars($_POST['charges']);
-        $req = $bdd->prepare('INSERT INTO `charge_repetition`(`id_exercices`,`id_entrainement`,`charges`,`repetitions`) VALUES (?,?,?,?)');
+        $req = $bdd->prepare('INSERT INTO `charge_repetition`(`id_user`,`id_exercices`,`id_entrainement`,`charges`,`repetitions`) VALUES (?,?,?,?,?)');
         $req->execute(array(
+            $id_user,
             $idExercices,
             $idEntrainement,
             $charges,

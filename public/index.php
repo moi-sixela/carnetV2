@@ -2,6 +2,8 @@
 
 require("connexion_bdd.php");
 
+session_start();
+
 if (isset($_POST['usernames'], $_POST['passwords'])) {
   $usernames = htmlspecialchars($_POST['usernames']);
   $passwords = htmlspecialchars($_POST['passwords']);
@@ -10,6 +12,7 @@ if (isset($_POST['usernames'], $_POST['passwords'])) {
   $user = $stmt->fetch();
 
   if ($user && password_verify($passwords, $user['password'])) {
+    $_SESSION["id_user"] = $user['id_user'];
     header("Location:http://localhost/carnetV2/public/profil.php");
   } else {
     echo "<script type='text/javascript'>alert('Username ou Mot de passe invalide');</script>";

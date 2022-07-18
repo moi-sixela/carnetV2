@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
 
 
@@ -8,8 +11,9 @@ if (isset($_POST['nameentrainement'], $_POST['descriptionentrainement'], $_POST[
         $nameEntrainement = htmlspecialchars($_POST['nameentrainement']);
         $description = htmlspecialchars($_POST['descriptionentrainement']);
         $date = htmlspecialchars($_POST['date']);
-        $req = $bdd->prepare('INSERT INTO `entrainement`(`name_entrainement`, `description_entrainement`, `date`) VALUES (?,?,?)');
+        $req = $bdd->prepare('INSERT INTO `entrainement`(`id_user`,`name_entrainement`, `description_entrainement`, `date`) VALUES (?,?,?,?)');
         $req->execute(array(
+            $id_user,
             $nameEntrainement,
             $description,
             $date

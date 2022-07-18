@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
 $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");
 
@@ -11,8 +15,9 @@ if (isset($_POST["checkbox"])) {
 
             if (!empty($checkoptions)) {
                 $nameCheckbox = htmlspecialchars($checkoptions);
-                $req = $bdd->prepare('INSERT INTO `exercices_entrainement`(`id_entrainement`,`name_exercices`) VALUES (?,?)');
+                $req = $bdd->prepare('INSERT INTO `exercices_entrainement`(`id_user`,`id_entrainement`,`name_exercices`) VALUES (?,?,?)');
                 $req->execute(array(
+                    $id_user,
                     $id_entrainement,
                     $nameCheckbox
 

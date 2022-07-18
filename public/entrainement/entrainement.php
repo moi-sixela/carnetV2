@@ -1,8 +1,11 @@
 <?php
 
+session_start();
+$id_user = $_SESSION['id_user'];
+
 require("../connexion_bdd.php");
 
-$listEntrainement = $bdd->query("SELECT * FROM `entrainement`");
+$listEntrainement = $bdd->query("SELECT * FROM `entrainement` WHERE `id_user` = $id_user ");
 ?>
 <!DOCTYPE html>
 <html lang="en">
