@@ -149,7 +149,6 @@ if (isset($_POST['first_name'], $_POST['last_name'], $_POST['email'], $_POST['us
   <script src="./script.js"></script>
 
 
-  <button onclick="location.href='profil.php'"> home </button>
 </body>
 
 </html>
