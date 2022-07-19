@@ -8,6 +8,7 @@ $addition = 0;
 $idExercices = (int)$_GET['id'];
 $idEntrainement = (int)$_GET['identrainement'];
 $listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition` WHERE `id_exercices`= $idExercices AND `id_user` = $id_user");
+$date = $bdd->query("SELECT * FROM `entrainement` WHERE `id`= $idEntrainement");
 
 if (isset($_POST['repetitions'], $_POST['charges'])) {
     if (!empty($_POST['repetitions']) && !empty($_POST['charges'])) {
@@ -64,22 +65,25 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
         <?php } ?>
         <div class="element" style="margin:30px" type="text">Poids total : <?= $addition ?> kg</div>
         <?php
+        while ($dates = $date->fetch()) {
+            $date_entrainement = $dates['date'];
+        }
         if (isset($addition)) {
             $id = $_GET["id"];
-            $id_entrainement = $_GET["identrainement"];
+            $id_entrainement = $idEntrainement;
             $poids_total = htmlspecialchars($addition);
-            $req = $bdd->prepare('UPDATE `exercices_entrainement` SET `poids_total`=? WHERE `id`=? AND `id_entrainement`=? ');
+            $req = $bdd->prepare('UPDATE `exercices_entrainement` SET `poids_total`=?, `date`=?   WHERE `id`=? AND `id_entrainement`=? ');
             $req->execute(array(
                 $poids_total,
+                $date_entrainement,
                 $id,
                 $id_entrainement
 
             ));
         };
+
         ?>
-
     </table>
-
 
 </table>
 
