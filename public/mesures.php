@@ -70,6 +70,7 @@
     <?php require("navbar.php") ?>
 
     <a class="button" type="button" href="mesures/poids.php">Poids</a>
+    <a class="button" type="button" href="mesures/height.php">Taille</a>
 
 
 
