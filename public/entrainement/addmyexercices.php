@@ -11,9 +11,8 @@ if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POS
         $description_exercices = htmlspecialchars($_POST['description_exercices']);
         $groupMuscu = htmlspecialchars($_POST['group_muscu']);
         $type = htmlspecialchars($_POST['type']);
-        $req = $bdd->prepare('INSERT INTO `my_exercices`(`id_user`,`name_exercices`,`description_exercices`,`group_muscu`,`type`) VALUES (?,?,?,?)');
+        $req = $bdd->prepare('INSERT INTO `my_exercices`(`name_exercices`,`description_exercices`,`group_muscu`,`type`) VALUES (?,?,?,?)');
         $req->execute(array(
-            $id_user,
             $nameExercices,
             $description_exercices,
             $groupMuscu,
@@ -21,7 +20,7 @@ if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POS
 
 
         ));
-        header("Location: http://localhost/carnetV2/public");
+        header("Location: http://localhost/carnetV2/public/myexercices.php");
     } else {
         echo "Veuillez remplir tous les champs";
     }
