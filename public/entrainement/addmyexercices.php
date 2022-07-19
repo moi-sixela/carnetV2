@@ -46,7 +46,7 @@ if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POS
     <form action="addmyexercices.php" method="post">
         <input type="text" id="name_exercices" name="name_exercices" required="required" placeholder="Nom de l'exercice" />
         <input type="text" id="description_exercices" name="description_exercices" placeholder="Description" />
-        <select name="group_muscu" id="group_muscu" required="required">
+        <select name="group_muscu" id="group_muscu" required="required" >
             <option value="">--- Choisir une groupe musculaire ---</option>
             <option value="Biceps">Biceps</option>
             <option value="Triceps">Triceps</option>

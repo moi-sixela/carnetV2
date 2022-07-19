@@ -4,6 +4,7 @@ require("connexion_bdd.php");
 require("verifconnect.php");
 
 $profil = $bdd->query("SELECT * FROM `authentification` WHERE `id_user` = $id_user")->fetch(PDO::FETCH_BOTH);
+$listExercices = $bdd->query("SELECT * FROM `exercices_entrainement` WHERE `id_user` = $id_user");
 
 ?>
 
@@ -27,6 +28,16 @@ $profil = $bdd->query("SELECT * FROM `authentification` WHERE `id_user` = $id_us
         .name {
             padding: 10px;
         }
+
+        canvas {
+
+            width: 1000px;
+            height: 100%;
+            margin: auto;
+            padding: 0;
+            border: none;
+            background-color: white;
+        }
     </style>
 
 </head>
@@ -41,7 +52,24 @@ $profil = $bdd->query("SELECT * FROM `authentification` WHERE `id_user` = $id_us
         <p class="age">Age : <?= $profil['age'] ?></p>
         <!-- <a class="edit" style="color:white" href="http://localhost/carnetV2/public/modifprofil.php"><span class="material-icons">edit</span></a> -->
     </div>
+    <form action="" method="post">
+        <select name="exercices" id="exercices" required="required" onchange="this.value">
+            <option value="">--- Choisir un exercice ---</option>
+            <?php $verif = array();
+            while ($exercices = $listExercices->fetch()) {
+                if (in_array($exercices['name_exercices'], $verif)) {
+                } else {
+                    array_push($verif, $exercices['name_exercices']) ?>
+                    <option name=" <?= $exercices['name_exercices'] ?>"><?= $exercices['name_exercices'] ?></option>
 
+            <?php
+
+                }
+            };
+
+            ?>
+
+        </select>
 
 </body>
 
