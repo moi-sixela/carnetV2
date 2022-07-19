@@ -1,6 +1,6 @@
 <?php
 
-require("verifconnect.php");
+require("../verifconnect.php");
 
 require("../connexion_bdd.php");
 $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");

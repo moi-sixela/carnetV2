@@ -1,5 +1,5 @@
 <?php
-require("verifconnect.php");
+require("../verifconnect.php");
 ?>
 
 <!DOCTYPE html>

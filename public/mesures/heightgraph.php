@@ -1,6 +1,6 @@
 <?php
 
-require("verifconnect.php");
+require("../verifconnect.php");
 
 require("../connexion_bdd.php");
 $query = sprintf("SELECT `height`,`date` FROM `my_height` WHERE `id_user` = $id_user ORDER BY `date`");

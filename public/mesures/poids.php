@@ -1,6 +1,6 @@
 <?php
 
-require("verifconnect.php");
+require("../verifconnect.php");
 
 require("../connexion_bdd.php");
 $listPoids = $bdd->query("SELECT * FROM `my_poids` WHERE `id_user` = $id_user ORDER BY `date` DESC;");

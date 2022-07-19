@@ -1,6 +1,6 @@
 <?php
 
-require("verifconnect.php");
+require("../verifconnect.php");
 
 require("../connexion_bdd.php");
 
