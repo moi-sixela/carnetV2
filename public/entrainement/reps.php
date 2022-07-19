@@ -44,7 +44,7 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
 </body>
 <?php require("../navbar.php") ?>
 
-
+<a type=button href="exercices.php?id=<?= $idEntrainement ?>"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
 <form action="reps.php?id=<?= $_GET['id'] ?>&identrainement=<?= $idEntrainement ?>" method="post" class="form-inline">
     <input type="int" id="int" placeholder="Nombre de répétitions" name="repetitions">
     <input type="int" id="int" placeholder="Poids (en kg)" name="charges">

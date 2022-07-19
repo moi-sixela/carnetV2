@@ -3,7 +3,7 @@
 require("connexion_bdd.php");
 require("verifconnect.php");
 
-$profil = $bdd->query("SELECT * FROM `authentification`")->fetch(PDO::FETCH_BOTH);
+$profil = $bdd->query("SELECT * FROM `authentification` WHERE `id_user` = $id_user")->fetch(PDO::FETCH_BOTH);
 
 ?>
 
