@@ -1,5 +1,5 @@
 <?php
-require("verifconnect.php");
+require("../verifconnect.php");
 ?>
 
 <!DOCTYPE html>
@@ -29,32 +29,6 @@ require("verifconnect.php");
 
         }
 
-        .navbar {
-            background-color: #333;
-            top: 0;
-            width: 100%;
-            left: 0;
-            text-align: center;
-
-
-        }
-
-        .navbar a {
-            font-family: Verdana, sans-serif;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            display: inline-block;
-        }
-
-        .navbar a:hover {
-            background: #f1f1f1;
-            color: black;
-        }
-
         a.button {
             width: auto;
             background-color: rgb(57, 57, 57);
@@ -71,7 +45,7 @@ require("verifconnect.php");
 </head>
 
 <body>
-    <?php require("navbar.php") ?>
+    <?php require("../navbar.php") ?>
 
     <a class="button" type="button" href="mesures/poids.php">Poids</a>
     <a class="button" type="button" href="mesures/height.php">Taille</a>

@@ -1,5 +1,5 @@
-<?php 
-require("verifconnect.php");
+<?php
+require("../verifconnect.php");
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ require("verifconnect.php");
 </head>
 
 <body>
-    <?php require("navbar.php") ?>
+    <?php require("../navbar.php") ?>
     <div type="listbutton">
         <button class="amrap" type="button" onclick="location.href='chronometre/amrap.php'">AMRAP</button>
         <button class="emom" type="button">EMOM</button>

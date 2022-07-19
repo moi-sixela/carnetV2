@@ -4,6 +4,7 @@ require("../verifconnect.php");
 
 require("../connexion_bdd.php");
 
+$addition = 0;
 $idExercices = (int)$_GET['id'];
 $idEntrainement = (int)$_GET['identrainement'];
 $listPoidsCharge = $bdd->query("SELECT * FROM `charge_repetition` WHERE `id_exercices`= $idExercices AND `id_user` = $id_user");
@@ -42,6 +43,7 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
 
 <body>
 </body>
+
 <?php require("../navbar.php") ?>
 
 <a type=button href="exercices.php?id=<?= $idEntrainement ?>"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
@@ -55,12 +57,26 @@ if (isset($_POST['repetitions'], $_POST['charges'])) {
         <?php
         while ($charge_repetition = $listPoidsCharge->fetch()) { ?>
             <li type="text">
+                <div class="element" type="text" <?= $repetition = $charge_repetition['repetitions'] ?> <?= $charge = $charge_repetition['charges'] ?> <?= $multiplication = $charge * $repetition ?><?= $addition = $multiplication + $addition ?>></div>
                 <?= $charge_repetition['repetitions'] ?>x<?= $charge_repetition['charges'] ?> kg
                 <a class="right" href="deletechargerepetition.php?idexercice=<?= $_GET['id'] ?>&id=<?= $charge_repetition['id'] ?>"><span class="material-icons" style="font-size:auto; color:#ff0000">cancel</span></a>
             </li>
         <?php } ?>
+        <div class="element" style="margin:30px" type="text">Poids total : <?= $addition ?> kg</div>
+        <?php
+        if (isset($addition)) {
+            $id = $_GET["id"];
+            $id_entrainement = $_GET["identrainement"];
+            $poids_total = htmlspecialchars($addition);
+            $req = $bdd->prepare('UPDATE `exercices_entrainement` SET `poids_total`=? WHERE `id`=? AND `id_entrainement`=? ');
+            $req->execute(array(
+                $poids_total,
+                $id,
+                $id_entrainement
 
-
+            ));
+        };
+        ?>
 
     </table>
 

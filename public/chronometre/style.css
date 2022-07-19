@@ -1,0 +1,118 @@
+body {
+    background-color: rgb(57, 57, 57);
+    margin: 0;
+
+}
+button{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;   
+
+}
+div [type="listbutton"] {
+    top:100px;
+}
+
+.tabata {
+    width: 50%;
+    background-color: rgb(31, 152, 251);
+    color: white;
+    padding: 14px 20px;
+    display: block;
+    position: relative;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 30px;
+    top: 30px;
+
+}
+
+.tabata:hover {
+    background-color: rgba(31, 152, 251, 0.742);
+}
+
+.amrap {
+    width: 50%;
+    background-color: rgb(46, 251, 31);
+    color: white;
+    padding: 14px 20px;
+    display: block;
+    position: relative;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 30px;
+    top: 30px;
+
+}
+
+.amrap:hover {
+    background-color: rgba(46, 251, 31, 0.742);
+}
+
+.emom {
+    width: 50%;
+    background-color: rgb(255, 136, 0);
+    color: white;
+    padding: 14px 20px;
+    display: block;
+    position: relative;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 30px;
+    top: 30px;
+
+
+}
+
+.emom:hover {
+    background-color: rgba(255, 136, 0, 0.742);
+}
+
+
+.chrono {
+    width: 50%;
+    background-color: rgb(157, 9, 190);
+    color: white;
+    padding: 14px 20px;
+    display: block;
+    position: relative;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 30px;
+    top: 30px;
+
+
+}
+
+.chrono:hover {
+    background-color: rgba(157, 9, 190, 0.742);
+}
+
+.timer {
+    width: 50%;
+    background-color: rgb(208, 4, 4);
+    color: white;
+    padding: 14px 20px;
+    display: block;
+    position: relative;
+    margin: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 30px;
+    top: 30px;
+
+
+}
+
+.timer:hover {
+    background-color: rgba(208, 4, 4, 0.742);
+}

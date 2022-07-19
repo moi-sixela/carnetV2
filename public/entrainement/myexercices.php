@@ -1,6 +1,6 @@
 <?php
-require("connexion_bdd.php");
-require("verifconnect.php");
+require("../connexion_bdd.php");
+require("../verifconnect.php");
 $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu`,`name_exercices`;");
 ?>
 
@@ -19,7 +19,7 @@ $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu
 </head>
 
 <body>
-    <?php require("navbar.php") ?>
+    <?php require("../navbar.php") ?>
 
 
     <table>
