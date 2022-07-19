@@ -39,8 +39,7 @@ $profil = $bdd->query("SELECT * FROM `authentification` WHERE `id_user` = $id_us
         <p class="first_name">Prénom : <?= $profil['first_name'] ?></p>
         <p class="date_naissance">Date de naissance : <?= $profil['date_naissance'] ?></p>
         <p class="age">Age : <?= $profil['age'] ?></p>
-        <a class="edit" style="color:white" href="http://localhost/carnetV2/public/modifprofil.php"><span class="material-icons">edit</span></a>
-
+        <!-- <a class="edit" style="color:white" href="http://localhost/carnetV2/public/modifprofil.php"><span class="material-icons">edit</span></a> -->
     </div>
 
 
