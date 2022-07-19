@@ -43,7 +43,7 @@ if (isset($_POST['name_exercices'], $_POST['group_muscu'], $_POST['type'], $_POS
 
 <body>
 
-    <a type=button href="myexercices.php"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
+    <a type=button href="../myexercices.php"><span class="material-icons" style="font-size:40px">arrow_back</span></a>
     <form action="addmyexercices.php" method="post">
         <input type="text" id="name_exercices" name="name_exercices" required="required" placeholder="Nom de l'exercice" />
         <input type="text" id="description_exercices" name="description_exercices" placeholder="Description" />

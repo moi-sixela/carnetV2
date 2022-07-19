@@ -38,7 +38,7 @@ $listExercices = $bdd->query("SELECT * FROM `my_exercices` ORDER BY `group_muscu
     </table>
 
 
-    <button onclick="location.href='addmyexercices.php'" class="button">+</button>
+    <button onclick="location.href='entrainement/addmyexercices.php'" class="button">+</button>
 
 </body>
 
