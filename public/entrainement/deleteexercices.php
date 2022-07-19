@@ -1,5 +1,5 @@
 <?php
-
+require("verifconnect.php");
 require("../connexion_bdd.php");
 
 if (isset($_GET['id']) && !empty($_GET['id'])) {

@@ -1,3 +1,7 @@
+<?php 
+require("verifconnect.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

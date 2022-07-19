@@ -1,11 +1,9 @@
 <?php
 
 require("connexion_bdd.php");
-session_start();
-$id_user = $_SESSION['id_user'];
+require("verifconnect.php");
 
 $profil = $bdd->query("SELECT * FROM `authentification`")->fetch(PDO::FETCH_BOTH);
-
 
 ?>
 

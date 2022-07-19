@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-$id_user = $_SESSION['id_user'];
+require("verifconnect.php");
 
 require("../connexion_bdd.php");
 

@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-$id_user = $_SESSION['id_user'];
+require("verifconnect.php");
 
 require("../connexion_bdd.php");
 $listPoids = $bdd->query("SELECT * FROM `my_height` WHERE `id_user` = $id_user ORDER BY `date` DESC;");
@@ -73,7 +72,8 @@ if (isset($_POST['date'], $_POST['height'])) {
 
                     for (var i in val) {
 
-                        taille.push(val[i].height)
+                        taille.push(val[i].height
+                        )
                         dateTaille.push(val[i].date)
 
                     }
